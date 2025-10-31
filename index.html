@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Weaver - Intelligent Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Time Weaver</h1>
+        <div class="controls">
+            <button id="theme-toggle">Toggle Theme</button>
+            <select id="view-selector">
+                <option value="month">Month View</option>
+                <option value="week">Week View</option>
+                <option value="day">Focus Day View</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Search events...">
+            <select id="filter-selector">
+                <option value="all">All Events</option>
+                <option value="work">Work</option>
+                <option value="personal">Personal</option>
+                <option value="deadline">Deadline</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <div id="calendar-container">
+            <!-- Calendar views will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Event Modal -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Add Event</h2>
+            <form id="event-form">
+                <label for="event-title">Title:</label>
+                <input type="text" id="event-title" required>
+
+                <label for="event-description">Description:</label>
+                <textarea id="event-description"></textarea>
+
+                <label for="event-date">Date:</label>
+                <input type="date" id="event-date" required>
+
+                <label for="event-start-time">Start Time:</label>
+                <input type="time" id="event-start-time" required>
+
+                <label for="event-end-time">End Time:</label>
+                <input type="time" id="event-end-time" required>
+
+                <label for="event-type">Type:</label>
+                <select id="event-type">
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="deadline">Deadline</option>
+                </select>
+
+                <label for="event-recurrence">Recurrence:</label>
+                <select id="event-recurrence">
+                    <option value="none">None</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+
+                <label for="secondary-timezone">Secondary Time Zone:</label>
+                <select id="secondary-timezone">
+                    <option value="">None</option>
+                    <option value="PST">PST</option>
+                    <option value="EST">EST</option>
+                    <option value="GMT">GMT</option>
+                </select>
+
+                <button type="submit" id="save-event">Save Event</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Time Blocking Modal -->
+    <div id="time-block-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Time Block</h2>
+            <form id="time-block-form">
+                <label for="block-title">Title:</label>
+                <input type="text" id="block-title" required>
+
+                <label for="block-date">Date:</label>
+                <input type="date" id="block-date" required>
+
+                <label for="block-start-time">Start Time:</label>
+                <input type="time" id="block-start-time" required>
+
+                <label for="block-end-time">End Time:</label>
+                <input type="time" id="block-end-time" required>
+
+                <button type="submit" id="save-block">Save Block</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Mini Task Modal -->
+    <div id="task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Add Task</h2>
+            <form id="task-form">
+                <label for="task-title">Task:</label>
+                <input type="text" id="task-title" required>
+
+                <label for="task-date">Date:</label>
+                <input type="date" id="task-date" required>
+
+                <button type="submit" id="save-task">Save Task</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
